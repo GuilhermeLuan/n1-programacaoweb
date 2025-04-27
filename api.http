@@ -1,0 +1,240 @@
+### Usuários
+### Criar usuário
+POST http://localhost:3000/usuarios
+Content-Type: application/json
+
+{
+  "nome": "João Silva",
+  "email": "joao@email.com",
+  "senha": "123456",
+  "cpf": "12345678900"
+}
+
+### Listar todos os usuários
+GET http://localhost:3000/usuarios
+
+### Obter usuário por ID
+GET http://localhost:3000/usuarios/1
+
+### Atualizar usuário
+PUT http://localhost:3000/usuarios/1
+Content-Type: application/json
+
+{
+  "nome": "João Silva Santos",
+  "email": "joao.silva@email.com"
+}
+
+### Deletar usuário
+DELETE http://localhost:3000/usuarios/1
+
+### Clientes
+### Criar cliente
+POST http://localhost:3000/usuarios/clientes
+Content-Type: application/json
+
+{
+  "nome": "Maria Santos",
+  "email": "maria@email.com",
+  "senha": "123456",
+  "cpf": "98765432100"
+}
+
+### Listar todos os clientes - Erro
+GET http://localhost:3000/usuarios/clientes
+
+### Obter cliente por ID
+GET http://localhost:3000/usuarios/clientes/1
+
+### Atualizar cliente
+PUT http://localhost:3000/usuarios/clientes/1
+Content-Type: application/json
+
+{
+  "nome": "Maria Santos Silva Modificada",
+  "email": "maria.santos@email.com"
+}
+
+### Deletar cliente
+DELETE http://localhost:3000/usuarios/clientes/1
+
+### Motoboys
+### Criar motoboy
+POST http://localhost:3000/usuarios/motoboys
+Content-Type: application/json
+
+{
+  "nome": "Pedro Oliveira",
+  "email": "pedro@email.com",
+  "senha": "123456",
+  "cpf": "45678912300",
+  "veiculoInfo": "Moto Honda CG 160",
+  "statusAtual": "Disponível"
+}
+
+### Listar todos os motoboys - Erro
+GET http://localhost:3000/usuarios/motoboys
+
+### Obter motoboy por ID
+GET http://localhost:3000/usuarios/motoboys/1
+
+### Atualizar motoboy
+PUT http://localhost:3000/usuarios/motoboys/1
+Content-Type: application/json
+
+{
+  "statusAtual": "Em entrega"
+}
+
+### Deletar motoboy
+DELETE http://localhost:3000/usuarios/motoboys/1
+
+### Endereços
+### Criar endereço
+POST http://localhost:3000/enderecos
+Content-Type: application/json
+
+{
+  "logradouro": "Rua das Flores",
+  "numero": "123",
+  "complemento": "Apto 101",
+  "bairro": "Centro",
+  "cidade": "São Paulo",
+  "estado": "SP",
+  "cep": "01234-567"
+}
+
+### Listar todos os endereços
+GET http://localhost:3000/enderecos
+
+### Obter endereço por ID
+GET http://localhost:3000/enderecos/1
+
+### Atualizar endereço
+PUT http://localhost:3000/enderecos/1
+Content-Type: application/json
+
+{
+  "complemento": "Apto 102"
+}
+
+### Deletar endereço
+DELETE http://localhost:3000/enderecos/1
+
+### Produtos
+### Criar produto
+POST http://localhost:3000/produtos
+Content-Type: application/json
+
+{
+  "nome": "Cebolinha",
+  "descricao": "A cebolinha, cujo nome científico é Allium schoenoprasum, é uma planta aromática",
+  "preco": 4.90,
+  "estoque": 50
+}
+
+### Listar todos os produtos
+GET http://localhost:3000/produtos
+
+### Obter produto por ID
+GET http://localhost:3000/produtos/1
+
+### Atualizar produto
+PUT http://localhost:3000/produtos/1
+Content-Type: application/json
+
+{
+  "preco": 49.90,
+  "estoque": 45
+}
+
+### Deletar produto
+DELETE http://localhost:3000/produtos/1
+
+### Categorias
+### Criar categoria
+POST http://localhost:3000/produtos/categorias
+Content-Type: application/json
+
+{
+  "nome": "Legume",
+  "descricao": "plantas ou partes de plantas utilizadas na alimentação"
+}
+
+### Listar todas as categorias -- Erro
+GET http://localhost:3000/produtos/categorias
+
+### Obter categoria por ID
+GET http://localhost:3000/produtos/categorias/1
+
+### Atualizar categoria
+PUT http://localhost:3000/produtos/categorias/1
+Content-Type: application/json
+
+{
+  "descricao": "Plantas ou partes de plantas utilizadas na alimentação"
+}
+
+### Deletar categoria
+DELETE http://localhost:3000/produtos/categorias/1
+
+### Pedidos
+### Criar pedido -- Erro
+POST http://localhost:3000/pedidos
+Content-Type: application/json
+
+{
+  "statusPedido": "Em preparação",
+  "valorTotal": 95.80,
+  "metodoPagamento": "Cartão de crédito",
+  "cliente": 1,
+  "motoboy": 1,
+  "enderecoEntrega": 1
+}
+
+### Listar todos os pedidos
+GET http://localhost:3000/pedidos
+
+### Obter pedido por ID
+GET http://localhost:3000/pedidos/1
+
+### Atualizar pedido
+PUT http://localhost:3000/pedidos/1
+Content-Type: application/json
+
+{
+  "statusPedido": "Em rota de entrega"
+}
+
+### Deletar pedido
+DELETE http://localhost:3000/pedidos/1
+
+### Itens de Pedido
+### Criar item de pedido -- Error
+POST http://localhost:3000/pedidos/itens
+Content-Type: application/json
+
+{
+  "quantidade": 2,
+  "precoUnitario": 45.90,
+  "pedido": 1,
+  "produto": 1
+}
+
+### Listar todos os itens de pedido -- Error
+GET http://localhost:3000/pedidos/itens
+
+### Obter item de pedido por ID
+GET http://localhost:3000/pedidos/itens/1
+
+### Atualizar item de pedido
+PUT http://localhost:3000/pedidos/itens/1
+Content-Type: application/json
+
+{
+  "quantidade": 3
+}
+
+### Deletar item de pedido
+DELETE http://localhost:3000/pedidos/itens/1
+
