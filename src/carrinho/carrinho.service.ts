@@ -19,11 +19,14 @@ export class CarrinhoService {
   }
 
   async findAllCarrinhos(): Promise<Carrinho[]> {
-    return this.carrinhoRepository.find();
+    return this.carrinhoRepository.find({ relations: ['cliente', 'itens'] });
   }
 
   async findCarrinhoById(id: number): Promise<Carrinho> {
-    return this.carrinhoRepository.findOne({ where: { id } });
+    return this.carrinhoRepository.findOne({
+      where: { id },
+      relations: ['cliente', 'itens'],
+    });
   }
 
   async updateCarrinho(

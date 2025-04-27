@@ -35,23 +35,24 @@ Content-Type: application/json
 
 {
   "nome": "Maria Santos",
-  "email": "maria1@email.com",
+  "email": "maria@email.com",
   "senha": "123456",
-  "cpf": "123111231"
+  "cpf": "98765432100"
 }
 
-### Listar todos os clientes - Erro
+### Listar todos os clientes -- Erro
 GET http://localhost:3000/usuarios/clientes
 
 ### Obter cliente por ID
 GET http://localhost:3000/usuarios/clientes/2
+
 
 ### Atualizar cliente
 PUT http://localhost:3000/usuarios/clientes/2
 Content-Type: application/json
 
 {
-  "nome": "Maria Santos Silva Modificada",
+  "nome": "Maria Santos Silva",
   "email": "maria.santos@email.com"
 }
 
@@ -72,7 +73,7 @@ Content-Type: application/json
   "statusAtual": "Disponível"
 }
 
-### Listar todos os motoboys - Erro
+### Listar todos os motoboys - - Erro
 GET http://localhost:3000/usuarios/motoboys
 
 ### Obter motoboy por ID
@@ -127,8 +128,8 @@ POST http://localhost:3000/produtos
 Content-Type: application/json
 
 {
-  "nome": "Cebolinha",
-  "descricao": "A cebolinha, cujo nome científico é Allium schoenoprasum, é uma planta aromática",
+  "nome": "Cebola",
+  "descricao": "Cebola",
   "preco": 4.90,
   "estoque": 50
 }
@@ -144,7 +145,7 @@ PUT http://localhost:3000/produtos/1
 Content-Type: application/json
 
 {
-  "preco": 49.90,
+  "preco": 5.90,
   "estoque": 45
 }
 
@@ -157,11 +158,11 @@ POST http://localhost:3000/produtos/categorias
 Content-Type: application/json
 
 {
-  "nome": "Legume",
-  "descricao": "plantas ou partes de plantas utilizadas na alimentação"
+  "nome": "hortaliça",
+  "descricao": "hortaliça"
 }
 
-### Listar todas as categorias -- Erro
+### Listar todas as categorias - erro
 GET http://localhost:3000/produtos/categorias
 
 ### Obter categoria por ID
@@ -172,7 +173,7 @@ PUT http://localhost:3000/produtos/categorias/1
 Content-Type: application/json
 
 {
-  "descricao": "Plantas ou partes de plantas utilizadas na alimentação"
+  "descricao": "hortaliça"
 }
 
 ### Deletar categoria
@@ -188,7 +189,7 @@ Content-Type: application/json
   "valorTotal": 95.80,
   "metodoPagamento": "Cartão de crédito",
   "cliente": 2,
-  "motoboy": 3,
+  "motoboy": 1,
   "enderecoEntrega": 1
 }
 
@@ -221,7 +222,7 @@ Content-Type: application/json
   "produto": 1
 }
 
-### Listar todos os itens de pedido -- Error
+### Listar todos os itens de pedido - erro
 GET http://localhost:3000/pedidos/itens
 
 ### Obter item de pedido por ID
@@ -237,4 +238,56 @@ Content-Type: application/json
 
 ### Deletar item de pedido
 DELETE http://localhost:3000/pedidos/itens/1
+
+### Carrinho
+### Criar carrinho
+POST http://localhost:3000/carrinho
+Content-Type: application/json
+
+{
+  "cliente": 2
+}
+
+### Listar todos os carrinhos
+GET http://localhost:3000/carrinho
+
+### Obter carrinho por ID
+GET http://localhost:3000/carrinho/1
+
+
+{
+  "cliente": 2
+}
+
+### Deletar carrinho
+DELETE http://localhost:3000/carrinho/1
+
+### Itens do Carrinho
+### Criar item no carrinho
+POST http://localhost:3000/carrinho/itens
+Content-Type: application/json
+
+{
+  "quantidade": 2,
+  "precoUnitario": 45.90,
+  "carrinho": 1,
+  "produto": 1
+}
+
+### Listar todos os itens do carrinho - erro
+GET http://localhost:3000/carrinho/itens
+
+### Obter item do carrinho por ID
+GET http://localhost:3000/carrinho/itens/1
+
+### Atualizar item do carrinho
+PUT http://localhost:3000/carrinho/itens/1
+Content-Type: application/json
+
+{
+  "quantidade": 3
+}
+
+### Deletar item do carrinho
+DELETE http://localhost:3000/carrinho/itens/1
 
