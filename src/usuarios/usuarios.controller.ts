@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Param, Put, Delete } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  Put,
+} from '@nestjs/common';
 import { UsuariosService } from './usuarios.service';
 import { Usuario } from '../entities/usuario.entity';
 import { Cliente } from '../entities/cliente.entity';
@@ -85,4 +93,4 @@ export class UsuariosController {
   deleteMotoboy(@Param('id') id: string) {
     return this.usuariosService.deleteMotoboy(+id);
   }
-} 
+}

@@ -19,11 +19,16 @@ export class PedidosService {
   }
 
   async findAllPedidos(): Promise<Pedido[]> {
-    return this.pedidosRepository.find();
+    return this.pedidosRepository.find({
+      relations: ['cliente', 'motoboy', 'enderecoEntrega', 'itens'],
+    });
   }
 
   async findPedidoById(id: number): Promise<Pedido> {
-    return this.pedidosRepository.findOne({ where: { id } });
+    return this.pedidosRepository.findOne({
+      where: { id },
+      relations: ['cliente', 'motoboy', 'enderecoEntrega', 'itens'],
+    });
   }
 
   async updatePedido(id: number, pedido: Partial<Pedido>): Promise<Pedido> {
@@ -48,7 +53,10 @@ export class PedidosService {
     return this.itensPedidoRepository.findOne({ where: { id } });
   }
 
-  async updateItemPedido(id: number, itemPedido: Partial<ItemPedido>): Promise<ItemPedido> {
+  async updateItemPedido(
+    id: number,
+    itemPedido: Partial<ItemPedido>,
+  ): Promise<ItemPedido> {
     await this.itensPedidoRepository.update(id, itemPedido);
     return this.findItemPedidoById(id);
   }
@@ -56,4 +64,4 @@ export class PedidosService {
   async deleteItemPedido(id: number): Promise<void> {
     await this.itensPedidoRepository.delete(id);
   }
-} 
+}

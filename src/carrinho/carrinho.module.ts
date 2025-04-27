@@ -4,10 +4,9 @@ import { Carrinho } from '../entities/carrinho.entity';
 import { ItemCarrinho } from '../entities/item-carrinho.entity';
 import { CarrinhoService } from './carrinho.service';
 
-
 @Module({
   imports: [TypeOrmModule.forFeature([Carrinho, ItemCarrinho])],
   providers: [CarrinhoService],
   exports: [CarrinhoService],
 })
-export class CarrinhoModule {} 
+export class CarrinhoModule {}

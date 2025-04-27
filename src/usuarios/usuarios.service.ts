@@ -9,11 +9,11 @@ import { Motoboy } from '../entities/motoboy.entity';
 export class UsuariosService {
   constructor(
     @InjectRepository(Usuario)
-    private usuariosRepository: Repository<Usuario>,
+    private readonly usuariosRepository: Repository<Usuario>,
     @InjectRepository(Cliente)
-    private clientesRepository: Repository<Cliente>,
+    private readonly clientesRepository: Repository<Cliente>,
     @InjectRepository(Motoboy)
-    private motoboysRepository: Repository<Motoboy>,
+    private readonly motoboysRepository: Repository<Motoboy>,
   ) {}
 
   // CRUD para Usuários
@@ -77,7 +77,7 @@ export class UsuariosService {
   }
 
   async findMotoboyById(id: number): Promise<Motoboy> {
-    return this.motoboysRepository.findOne({ 
+    return this.motoboysRepository.findOne({
       where: { id },
       relations: ['pedidos'],
     });
@@ -91,4 +91,4 @@ export class UsuariosService {
   async deleteMotoboy(id: number): Promise<void> {
     await this.motoboysRepository.delete(id);
   }
-} 
+}

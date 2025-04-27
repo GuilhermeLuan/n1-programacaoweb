@@ -1,4 +1,11 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany, CreateDateColumn } from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  ManyToOne,
+  OneToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import { Cliente } from './cliente.entity';
 import { Motoboy } from './motoboy.entity';
 import { Endereco } from './endereco.entity';
@@ -21,15 +28,15 @@ export class Pedido {
   @Column()
   metodoPagamento: string;
 
-  @ManyToOne(() => Cliente, cliente => cliente.pedidos)
+  @ManyToOne(() => Cliente, (cliente) => cliente.pedidos)
   cliente: Cliente;
 
-  @ManyToOne(() => Motoboy, motoboy => motoboy.pedidos)
+  @ManyToOne(() => Motoboy, (motoboy) => motoboy.pedidos)
   motoboy: Motoboy;
 
   @ManyToOne(() => Endereco)
   enderecoEntrega: Endereco;
 
-  @OneToMany(() => ItemPedido, itemPedido => itemPedido.pedido)
+  @OneToMany(() => ItemPedido, (itemPedido) => itemPedido.pedido)
   itens: ItemPedido[];
-} 
+}

@@ -22,7 +22,10 @@ export class EnderecosService {
     return this.enderecosRepository.findOne({ where: { id } });
   }
 
-  async updateEndereco(id: number, endereco: Partial<Endereco>): Promise<Endereco> {
+  async updateEndereco(
+    id: number,
+    endereco: Partial<Endereco>,
+  ): Promise<Endereco> {
     await this.enderecosRepository.update(id, endereco);
     return this.findEnderecoById(id);
   }
@@ -30,4 +33,4 @@ export class EnderecosService {
   async deleteEndereco(id: number): Promise<void> {
     await this.enderecosRepository.delete(id);
   }
-} 
+}

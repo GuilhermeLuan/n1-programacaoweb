@@ -1,4 +1,10 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany } from 'typeorm';
+import {
+  Column,
+  Entity,
+  ManyToOne,
+  OneToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import { Categoria } from './categoria.entity';
 import { ItemPedido } from './item-pedido.entity';
 import { ItemCarrinho } from './item-carrinho.entity';
@@ -20,12 +26,12 @@ export class Produto {
   @Column()
   estoque: number;
 
-  @ManyToOne(() => Categoria, categoria => categoria.produtos)
+  @ManyToOne(() => Categoria, (categoria) => categoria.produtos)
   categoria: Categoria;
 
-  @OneToMany(() => ItemPedido, itemPedido => itemPedido.produto)
+  @OneToMany(() => ItemPedido, (itemPedido) => itemPedido.produto)
   itensPedido: ItemPedido[];
 
-  @OneToMany(() => ItemCarrinho, itemCarrinho => itemCarrinho.produto)
+  @OneToMany(() => ItemCarrinho, (itemCarrinho) => itemCarrinho.produto)
   itensCarrinho: ItemCarrinho[];
-} 
+}

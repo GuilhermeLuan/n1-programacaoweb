@@ -1,4 +1,11 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn, TableInheritance } from 'typeorm';
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  OneToOne,
+  PrimaryGeneratedColumn,
+  TableInheritance,
+} from 'typeorm';
 import { Endereco } from './endereco.entity';
 
 @Entity()
@@ -22,4 +29,4 @@ export class Usuario {
   @OneToOne(() => Endereco)
   @JoinColumn()
   enderecoPrincipal: Endereco;
-} 
+}

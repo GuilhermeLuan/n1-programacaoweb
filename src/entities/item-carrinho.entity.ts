@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { Carrinho } from './carrinho.entity';
 import { Produto } from './produto.entity';
 
@@ -13,9 +13,9 @@ export class ItemCarrinho {
   @Column('decimal', { precision: 10, scale: 2 })
   precoUnitario: number;
 
-  @ManyToOne(() => Carrinho, carrinho => carrinho.itens)
+  @ManyToOne(() => Carrinho, (carrinho) => carrinho.itens)
   carrinho: Carrinho;
 
   @ManyToOne(() => Produto)
   produto: Produto;
-} 
+}

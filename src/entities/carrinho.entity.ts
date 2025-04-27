@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, OneToMany, OneToOne } from 'typeorm';
+import { Entity, OneToMany, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { Cliente } from './cliente.entity';
 import { ItemCarrinho } from './item-carrinho.entity';
 
@@ -7,9 +7,9 @@ export class Carrinho {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @OneToOne(() => Cliente, cliente => cliente.carrinho)
+  @OneToOne(() => Cliente, (cliente) => cliente.carrinho)
   cliente: Cliente;
 
-  @OneToMany(() => ItemCarrinho, itemCarrinho => itemCarrinho.carrinho)
+  @OneToMany(() => ItemCarrinho, (itemCarrinho) => itemCarrinho.carrinho)
   itens: ItemCarrinho[];
-} 
+}

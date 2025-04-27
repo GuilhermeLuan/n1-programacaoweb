@@ -35,19 +35,19 @@ Content-Type: application/json
 
 {
   "nome": "Maria Santos",
-  "email": "maria@email.com",
+  "email": "maria1@email.com",
   "senha": "123456",
-  "cpf": "98765432100"
+  "cpf": "123111231"
 }
 
 ### Listar todos os clientes - Erro
 GET http://localhost:3000/usuarios/clientes
 
 ### Obter cliente por ID
-GET http://localhost:3000/usuarios/clientes/1
+GET http://localhost:3000/usuarios/clientes/2
 
 ### Atualizar cliente
-PUT http://localhost:3000/usuarios/clientes/1
+PUT http://localhost:3000/usuarios/clientes/2
 Content-Type: application/json
 
 {
@@ -76,10 +76,10 @@ Content-Type: application/json
 GET http://localhost:3000/usuarios/motoboys
 
 ### Obter motoboy por ID
-GET http://localhost:3000/usuarios/motoboys/1
+GET http://localhost:3000/usuarios/motoboys/3
 
 ### Atualizar motoboy
-PUT http://localhost:3000/usuarios/motoboys/1
+PUT http://localhost:3000/usuarios/motoboys/3
 Content-Type: application/json
 
 {
@@ -179,7 +179,7 @@ Content-Type: application/json
 DELETE http://localhost:3000/produtos/categorias/1
 
 ### Pedidos
-### Criar pedido -- Erro
+### Criar pedido
 POST http://localhost:3000/pedidos
 Content-Type: application/json
 
@@ -187,8 +187,8 @@ Content-Type: application/json
   "statusPedido": "Em preparação",
   "valorTotal": 95.80,
   "metodoPagamento": "Cartão de crédito",
-  "cliente": 1,
-  "motoboy": 1,
+  "cliente": 2,
+  "motoboy": 3,
   "enderecoEntrega": 1
 }
 
@@ -210,7 +210,7 @@ Content-Type: application/json
 DELETE http://localhost:3000/pedidos/1
 
 ### Itens de Pedido
-### Criar item de pedido -- Error
+### Criar item de pedido
 POST http://localhost:3000/pedidos/itens
 Content-Type: application/json
 

@@ -10,4 +10,4 @@ import { EnderecosController } from './enderecos.controller';
   controllers: [EnderecosController],
   exports: [EnderecosService],
 })
-export class EnderecosModule {} 
+export class EnderecosModule {}

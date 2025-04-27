@@ -48,7 +48,10 @@ export class ProdutosService {
     return this.categoriasRepository.findOne({ where: { id } });
   }
 
-  async updateCategoria(id: number, categoria: Partial<Categoria>): Promise<Categoria> {
+  async updateCategoria(
+    id: number,
+    categoria: Partial<Categoria>,
+  ): Promise<Categoria> {
     await this.categoriasRepository.update(id, categoria);
     return this.findCategoriaById(id);
   }
@@ -56,4 +59,4 @@ export class ProdutosService {
   async deleteCategoria(id: number): Promise<void> {
     await this.categoriasRepository.delete(id);
   }
-} 
+}

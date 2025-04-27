@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Param, Put, Delete } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  Put,
+} from '@nestjs/common';
 import { PedidosService } from './pedidos.service';
 import { Pedido } from '../entities/pedido.entity';
 import { ItemPedido } from '../entities/item-pedido.entity';
@@ -50,7 +58,10 @@ export class PedidosController {
   }
 
   @Put('itens/:id')
-  updateItemPedido(@Param('id') id: string, @Body() itemPedido: Partial<ItemPedido>) {
+  updateItemPedido(
+    @Param('id') id: string,
+    @Body() itemPedido: Partial<ItemPedido>,
+  ) {
     return this.pedidosService.updateItemPedido(+id, itemPedido);
   }
 
@@ -58,4 +69,4 @@ export class PedidosController {
   deleteItemPedido(@Param('id') id: string) {
     return this.pedidosService.deleteItemPedido(+id);
   }
-} 
+}

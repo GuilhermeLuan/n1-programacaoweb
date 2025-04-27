@@ -16,7 +16,6 @@ import { PedidosModule } from './pedidos/pedidos.module';
 import { EnderecosModule } from './enderecos/enderecos.module';
 import { CarrinhoModule } from './carrinho/carrinho.module';
 
-
 @Module({
   imports: [
     TypeOrmModule.forRoot({

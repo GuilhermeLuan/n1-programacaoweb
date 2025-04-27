@@ -1,4 +1,4 @@
-import { Entity, OneToOne, JoinColumn, OneToMany, ChildEntity } from 'typeorm';
+import { ChildEntity, JoinColumn, OneToMany, OneToOne } from 'typeorm';
 import { Usuario } from './usuario.entity';
 import { Carrinho } from './carrinho.entity';
 import { Pedido } from './pedido.entity';
@@ -9,6 +9,6 @@ export class Cliente extends Usuario {
   @JoinColumn()
   carrinho: Carrinho;
 
-  @OneToMany(() => Pedido, pedido => pedido.cliente)
+  @OneToMany(() => Pedido, (pedido) => pedido.cliente)
   pedidos: Pedido[];
-} 
+}

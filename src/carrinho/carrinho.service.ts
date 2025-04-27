@@ -26,7 +26,10 @@ export class CarrinhoService {
     return this.carrinhoRepository.findOne({ where: { id } });
   }
 
-  async updateCarrinho(id: number, carrinho: Partial<Carrinho>): Promise<Carrinho> {
+  async updateCarrinho(
+    id: number,
+    carrinho: Partial<Carrinho>,
+  ): Promise<Carrinho> {
     await this.carrinhoRepository.update(id, carrinho);
     return this.findCarrinhoById(id);
   }
@@ -36,7 +39,9 @@ export class CarrinhoService {
   }
 
   // CRUD para Itens de Carrinho
-  async createItemCarrinho(itemCarrinho: Partial<ItemCarrinho>): Promise<ItemCarrinho> {
+  async createItemCarrinho(
+    itemCarrinho: Partial<ItemCarrinho>,
+  ): Promise<ItemCarrinho> {
     return this.itensCarrinhoRepository.save(itemCarrinho);
   }
 
@@ -48,7 +53,10 @@ export class CarrinhoService {
     return this.itensCarrinhoRepository.findOne({ where: { id } });
   }
 
-  async updateItemCarrinho(id: number, itemCarrinho: Partial<ItemCarrinho>): Promise<ItemCarrinho> {
+  async updateItemCarrinho(
+    id: number,
+    itemCarrinho: Partial<ItemCarrinho>,
+  ): Promise<ItemCarrinho> {
     await this.itensCarrinhoRepository.update(id, itemCarrinho);
     return this.findItemCarrinhoById(id);
   }
@@ -56,4 +64,4 @@ export class CarrinhoService {
   async deleteItemCarrinho(id: number): Promise<void> {
     await this.itensCarrinhoRepository.delete(id);
   }
-} 
+}
