@@ -216,9 +216,6 @@ Content-Type: application/json
   "produto": 1
 }
 
-### Listar todos os itens de pedido - erro
-GET http://localhost:3000/pedidos/itens
-
 ### Obter item de pedido por ID
 GET http://localhost:3000/pedidos/itens/1
 
