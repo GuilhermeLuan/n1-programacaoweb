@@ -40,8 +40,7 @@ Content-Type: application/json
   "cpf": "98765432100"
 }
 
-### Listar todos os clientes -- Erro
-GET http://localhost:3000/usuarios/clientes
+
 
 ### Obter cliente por ID
 GET http://localhost:3000/usuarios/clientes/2
@@ -72,9 +71,6 @@ Content-Type: application/json
   "veiculoInfo": "Moto Honda CG 160",
   "statusAtual": "Disponível"
 }
-
-### Listar todos os motoboys - - Erro
-GET http://localhost:3000/usuarios/motoboys
 
 ### Obter motoboy por ID
 GET http://localhost:3000/usuarios/motoboys/3
@@ -162,8 +158,6 @@ Content-Type: application/json
   "descricao": "hortaliça"
 }
 
-### Listar todas as categorias - erro
-GET http://localhost:3000/produtos/categorias
 
 ### Obter categoria por ID
 GET http://localhost:3000/produtos/categorias/1
@@ -274,7 +268,6 @@ Content-Type: application/json
   "produto": 1
 }
 
-### Listar todos os itens do carrinho - erro
 GET http://localhost:3000/carrinho/itens
 
 ### Obter item do carrinho por ID
